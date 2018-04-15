@@ -65,7 +65,7 @@
               <arguments>build</arguments>
             </configuration>
           </execution>
-          <execution>
+         <!--  <execution>
             <id>yarn test</id>
             <goals>
               <goal>yarn</goal>
@@ -75,7 +75,7 @@
               <arguments>test</arguments>
               <failOnError>true</failOnError>
             </configuration>
-          </execution>
+          </execution> -->
         </executions>
       </plugin>
     </plugins>
