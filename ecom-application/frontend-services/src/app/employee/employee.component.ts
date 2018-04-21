@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
+  addEmployee(form)  {
+    console.log(form.value);
+  }
   constructor() { }
 
   ngOnInit() {
