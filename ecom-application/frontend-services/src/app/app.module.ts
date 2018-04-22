@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule  } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
 //import {NgForm} from '@angular/forms';
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeeService } from './employee.service';
 
 
 
@@ -29,10 +31,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
    // NgForm
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

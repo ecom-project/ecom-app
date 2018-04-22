@@ -1,21 +1,22 @@
 <div class="container">
  <div class="jumbotron">
 	<h1>Employee Form</h1>
-	<form #frm="ngForm" (ngSubmit)="addEmployee(frm)">
+	<form>
 		<div class="form-group">
 			<label for="name">Name</label> <input type="text"
-				class="form-control" id="name" ngModel required name="name">
+				class="form-control" id="name"  required name="name" pattern="[a-zA-Z ]*" [(ngModel)]="employee.name" placeholder="Name">
 		</div>
 
 		<div class="form-group">
-			<label for="alterEgo">Contact No</label> <input type="text"
-				class="form-control" id="contactNo" ngModel required name="contact">
+			<label for="contact">Contact No</label> <input type="text"
+				class="form-control" id="contactNo"  required name="contact" pattern="[0-9]*" [(ngModel)]="employee.contact" placeholder="Contact No">
 		</div>
+
 
 		<div class="form-group">
 			<label for="alterEgo">Gender</label>
 			<div class="form-group">
-				<select class="form-control" name="gender" ngModel required>
+				<select class="form-control" name="gender"  required>
 					<option value="">Please select Gender</option>
 					<option value="MALE">Male</option>
 					<option value="FEMALE">Female</option>
@@ -23,11 +24,10 @@
 			</div>
 		</div>
 
-		<button type="submit" class="btn btn-success" >Submit</button>
+		<button type="button" class="btn btn-success" (click)="createEmployee()">Submit</button>
 
 	</form>
 
 </div>
 
 </div>
-{{frm.value | json}}

@@ -1,4 +1,7 @@
+import { Employee } from '../employee.model';
+import { EmployeeService } from '../employee.service';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-employee',
@@ -7,12 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
+   employee: Employee = new Employee();
   addEmployee(form)  {
     console.log(form.value);
   }
-  constructor() { }
+   
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
   }
+ createEmployee(): void {
+    this.employeeService.createEmployee(this.employee)
+        .subscribe( data => {
+          alert("User created successfully.");
+        });
+
+  };
 
 }
