@@ -19,6 +19,7 @@
     <modules>
         <module>frontend-services</module>
         <module>backend-services</module>
+        <module>frontend-admin</module>
     </modules>
 
     <properties>
